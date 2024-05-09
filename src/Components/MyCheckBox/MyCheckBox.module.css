@@ -1,0 +1,55 @@
+
+
+input[type="checkbox"] {
+   display: none; /* Скрыть стандартный вид checkbox */
+ }
+ 
+ /* Создание круглого контейнера для галочки */
+ input[type="checkbox"] + label {
+   position: relative;
+   padding-left: 40px; /* Отступ слева для создания пространства между кругом и текстом метки */
+   cursor: pointer;
+   line-height: 25px; /* Вертикальное выравнивание текста метки */
+ }
+ 
+ /* Стилизация круга */
+ input[type="checkbox"] + label::before {
+   content: "";
+   position: absolute;
+   left: 0;
+   top: 0;
+   width: 25px; /* Размер круга */
+   height: 25px; /* Размер круга */
+   border: 2px solid #fff;
+   background-color: #000; /* Цвет границы главного круга */
+   border-radius: 50%; /* Делаем круг */
+   margin-right: 10px; /* Отступ между кругом и текстом метки по горизонтали */
+ }
+ 
+ /* Стилизация маленького круга внутри главного круга при выборе */
+ input[type="checkbox"]:checked + label::before {
+   background-color: #000; /* Цвет главного круга при выборе */
+ }
+ 
+ /* Маленький круг внутри главного круга при выборе */
+ input[type="checkbox"]:checked + label::after {
+   content: "";
+   position: absolute;
+   left: 9px; /* Отступ для центрирования маленького круга по горизонтали */
+   top: 9px; /* Отступ для центрирования маленького круга по вертикали */
+   width: 11px; /* Размер маленького круга */
+   height: 11px; /* Размер маленького круга */
+   background-color: #fff; /* Цвет маленького круга */
+   border-radius: 50%; /* Делаем маленький круг */
+ }
+
+ .inputStyle {
+   color: #FFF;
+   height: 32px;
+   
+   display: flex;
+   align-items: center;
+   row-gap: 20px;
+   font-family: Monda;
+   font-size: 26px;
+ }
